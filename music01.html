@@ -1,0 +1,41 @@
+QQmusic
+1 推荐页
+  1.安装脚手架vuecli,搭建项目目录
+  2.在src下新建文件夹 api|common|base|components|store
+  api:   后端的请求代码 Ajax,jsonp axios...
+  common:通用的资源文件
+  base:  基础组件
+  components:通用组件(公共组件)
+  store: vuex的组件
+  3.项目使用stylus CSS预处理语言
+    如果没有配置的话,需要提前安装stylus,
+    cnpm i --save-dev stylus stylus-loader
+2.页面骨架搭建
+  1提前安装一些依赖
+   cnpm i --save fastclick babel-runtime
+   cnpm i --savdev fastclick babel-polyfill
+    (1)fastclick:解决移动端点击300ms延迟问题
+    (2)babel-polyfill:ES6的API语法转译器
+      在项目开头的第一句引入
+    (3)babel-runtime:ES6语法的转译
+   2创建头部m-header
+   在components下新建m-header组件,该组件注册在APP组件下
+   3导航栏组件开发-配置路由
+   页面的导航有四个,分别是recommend/singer/rank/search页面
+   每一个路由对应一个组件
+   在components下新建这四个组件和一个导航组件tab
+3开发推荐页
+  (1) 推荐页包括轮播图和热门歌曲列表
+   轮播图:首先要获取接口的图片数据
+   我们所有的请求代码要写在api文件下新建/recommend.js
+
+   (2)新建轮播组件slide.vue
+   element-ui 插件
+   vant(有赞) 插件
+   swiper
+   使用swiper插件 vue-awesome-swiper
+   安装cnpm i --save vue-awesome-swiper
+2.热门歌曲推荐
+  (1)还是需要抓取热门的接口
+    https://c.y.qq.com/splcloud/fcgi-bin/fcg_get_diss_by_tag.fcg
+  在api/recommend.js下新建获取接口的方法

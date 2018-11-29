@@ -1,0 +1,54 @@
+项目实现
+  1.利用vue的脚手架工具@vue/cli版本3
+  vuecli3集成了webpack4
+  帮我们生成了项目目录结构 源码文件src
+  vue.config.js是webpack的配置文件,webpack如果不使用脚手架
+  要选择一个模块管理工具(webpack),手动配置webpack.config.js
+
+  2.src目录中展示项目目录结构
+  api    请求的文件
+  components 公共组件
+  common 公共逻辑 样式
+  base   基础组件
+  config js配置文件
+  store  vuex全局状态管理
+  router 路由相关的文件
+  assets 静态资源(图片,字体)
+  3.入口文件 main.js配置
+    单文件应用中 index.html中只有一个div
+    前端路由: 使用插件vue-router
+            router.js 
+    状态管理 :vuex
+  fastclick解决300ms延迟
+  vuex的数据流:单向数据流
+  组件之间的通信:
+  定义props
+  $emit:派发一个自定义事件
+  EventBus 类似Vuex 全局对象来定义
+  1.制作导航栏,有四个routerlink来实现,通过配置路由来实现页面的切换
+  2.首先开发推荐页(轮播+热门歌曲推荐)
+    轮播:使用插件 vue-awesome-swiper
+    element-ui组件库 vant ui有赞 组件库
+    热门歌曲
+    1.请求接口数据(产生跨域),使用jsonp来跨域请求
+    由于接口设置了referer限制,直接跨域请求是请求不到的,我们是通过设置服务器端
+    代理(proxy)来实现
+    webpack中集成了代理的插件 http-proxy-middleware
+    提供了配置选项devServer,devServer中有很多字段 有字段proxy进行设置参数
+
+
+    前端发起请求
+    通过axios发起请求
+    Axios 是一个基于 promise 的 HTTP 库，可以用在浏览器和 node.js 中。
+    从浏览器中创建 XMLHttpRequests
+    从 node.js 创建 http 请求
+    支持 Promise API
+   3.滚动实现 :better-scroll插件
+
+  4.歌手页面-实现播放功能(核心功能)
+  player 组件中实现核心播放功能
+  播放|切换歌曲|模式切换|进度拖动
+  https://juejin.im/post/5bce6a26e51d4579e9711f1d
+
+  https://juejin.im/post/5b06c79d51882538b4297adb
+
